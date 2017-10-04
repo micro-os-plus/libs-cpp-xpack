@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/cpp-libs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An xPack with complementary C++ library functions",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/micro-os-plus/cpp-libs.git"
   },
-  "homepage": "https://github.com/micro-os-plus/cpp-libs",  
+  "homepage": "https://github.com/micro-os-plus/cpp-libs",
   "keywords": [
     "xpack",
     "c++",
