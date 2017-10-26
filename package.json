@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micro-os-plus/cpp-libs.git"
+    "url": "git+https://github.com/micro-os-plus/cpp-libs-xpack.git"
   },
-  "homepage": "https://github.com/micro-os-plus/cpp-libs",
+  "homepage": "https://github.com/micro-os-plus/cpp-libs-xpack",
   "keywords": [
     "xpack",
     "c++",
@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/micro-os-plus/cpp-libs/issues"
+    "url": "https://github.com/micro-os-plus/cpp-libs-xpack/issues"
   },
   "config": {},
   "dependencies": {},
