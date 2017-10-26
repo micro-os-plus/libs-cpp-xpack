@@ -10,10 +10,10 @@ This section is intended to developers who plan to include this library in their
 
 ### Easy install
 
-The source files are available from [GitHub](https://github.com/micro-os-plus/cpp-libs):
+The source files are available from [GitHub](https://github.com/micro-os-plus/cpp-libs-xpack):
 
 ```bash
-$ git clone https://github.com/micro-os-plus/cpp-libs.git cpp-libs.git
+$ git clone https://github.com/micro-os-plus/cpp-libs-xpack.git cpp-libs-xpack.git
 ```
 
 The library will shortly be available from the npm registry:
