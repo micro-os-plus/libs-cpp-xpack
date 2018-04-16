@@ -2,6 +2,11 @@
 
 Changes in reverse chronological order.
 
+### v1.0.4 (2018-04-16)
+
+* move deps back to npm
+* update README install
+
 ### v1.0.3 (2018-01-09)
 
 * README updates
