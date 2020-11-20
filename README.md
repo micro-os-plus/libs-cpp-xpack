@@ -1,4 +1,8 @@
-## µOS++ complementary C++ library functions
+[![license](https://img.shields.io/github/license/micro-os-plus/cpp-libs-xpack)](https://github.com/micro-os-plus/cpp-libs-xpack/blob/xpack/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/cpp-libs-xpack.svg)](https://github.com/micro-os-plus/cpp-libs-xpack/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/cpp-libs-xpack.svg)](https://github.com/micro-os-plus/cpp-libs-xpack/pulls)
+
+# µOS++ complementary C++ library functions
 
 These are some files that complement or extend the C++ library:
 
@@ -30,12 +34,14 @@ $ git clone https://github.com/micro-os-plus/cpp-libs-xpack.git cpp-libs-xpack.g
 
 ### How to publish
 
-* commit all changes
-* update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v0.1.2_
-* `npm version patch`
-* push all changes to GitHub
-* `npm publish`
+- commit all changes
+- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v0.1.2_
+- `npm version patch`
+- push all changes to GitHub
+- `npm publish`
 
 ## License
 
-The original content is released under the [MIT License](https://opensource.org/licenses/MIT), with all rights reserved to [Liviu Ionescu](https://github.com/ilg-ul).
+The original content is released under the
+[MIT License](https://opensource.org/licenses/MIT), with all rights reserved to
+[Liviu Ionescu](https://github.com/ilg-ul).
