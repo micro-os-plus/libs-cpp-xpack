@@ -1,5 +1,5 @@
 {
-  "name": "@micro-os-plus/cpp-libs",
+  "name": "@micro-os-plus/libs-cpp",
   "version": "1.0.4",
   "description": "A source xPack with complementary C++ library functions",
   "main": "",
@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micro-os-plus/cpp-libs-xpack.git"
+    "url": "git+https://github.com/micro-os-plus/libs-cpp-xpack.git"
   },
-  "homepage": "https://github.com/micro-os-plus/cpp-libs-xpack",
+  "homepage": "https://github.com/micro-os-plus/libs-cpp-xpack",
   "keywords": [
     "xpack",
     "c++",
@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/micro-os-plus/cpp-libs-xpack/issues"
+    "url": "https://github.com/micro-os-plus/libs-cpp-xpack/issues"
   },
   "config": {},
   "dependencies": {},
