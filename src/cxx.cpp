@@ -26,8 +26,8 @@
  */
 
 #include <cstdlib>
-#include <micro-os-plus/diag/trace.h>
 #include <sys/types.h>
+#include <micro-os-plus/diag/trace.h>
 
 // ----------------------------------------------------------------------------
 
@@ -36,24 +36,27 @@
 
 namespace __gnu_cxx
 {
-[[noreturn]] void __verbose_terminate_handler ();
+  [[noreturn]] void
+  __verbose_terminate_handler ();
 
-void
-__verbose_terminate_handler ()
-{
-  os::trace::puts (__func__);
-  abort ();
-  /* NOTREACHED */
-}
+  void
+  __verbose_terminate_handler ()
+  {
+    os::trace::puts (__func__);
+    abort ();
+    /* NOTREACHED */
+  }
 }
 
 // ----------------------------------------------------------------------------
 
 extern "C"
 {
-  [[noreturn]] void __cxa_pure_virtual ();
+  [[noreturn]] void
+  __cxa_pure_virtual ();
 
-  [[noreturn]] void __cxa_deleted_virtual ();
+  [[noreturn]] void
+  __cxa_deleted_virtual ();
 
   void
   __cxa_pure_virtual ()
@@ -75,6 +78,6 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 
-void* __dso_handle __attribute__ ((weak));
+void *__dso_handle __attribute__ ((weak));
 
 // ----------------------------------------------------------------------------
