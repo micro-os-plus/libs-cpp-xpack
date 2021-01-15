@@ -30,6 +30,10 @@
 
 #if defined(__EXCEPTIONS)
 #include <string>
+#if defined(__linux)
+// For unknown reasons, on Linux the C++ header does not include strerror().
+#include <string.h>
+#endif
 #include <system_error>
 #endif
 
