@@ -31,6 +31,8 @@
 
 // ----------------------------------------------------------------------------
 
+#if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__)))
+
 // These functions are redefined locally, to avoid references to some
 // heavy implementations in the standard C++ library.
 
@@ -47,6 +49,8 @@ namespace __gnu_cxx
     /* NOTREACHED */
   }
 } // namespace __gnu_cxx
+
+#endif // Unix
 
 // ----------------------------------------------------------------------------
 
