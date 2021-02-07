@@ -9,6 +9,7 @@ and close existing issues and pull requests.
 ## 2021-02-04
 
 - v1.1.1-pre
+- [#1] - fix the missing strerror()
 
 ## 2021-02-04
 

@@ -29,13 +29,14 @@
 #include <micro-os-plus/estd/system_error>
 
 #if defined(__EXCEPTIONS)
+
 #include <string>
-#if defined(__linux)
-// For unknown reasons, on Linux the C++ header does not include strerror().
+// For unknown reasons, the C++ header does not include strerror().
 #include <string.h>
-#endif
+
 #include <system_error>
-#endif
+
+#endif // defined(__EXCEPTIONS)
 
 // ----------------------------------------------------------------------------
 
