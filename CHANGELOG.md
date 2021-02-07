@@ -6,26 +6,35 @@ Please check
 [GitHub](https://github.com/micro-os-plus/libs-cpp-xpack/issues/)
 and close existing issues and pull requests.
 
-## v1.1.0 (2021-02-04)
+## 2021-02-04
 
+- v1.1.1-pre
+
+## 2021-02-04
+
+- v1.1.0
 - first restructured release
 
-## v1.0.4 (2018-04-16)
+## 2018-04-16
 
-* move deps back to npm
-* update README install
+- v1.0.4
+- move deps back to npm
+- update README install
 
-## v1.0.3 (2018-01-09)
+## 2018-01-09
 
-* README updates
+- v1.0.3
+- README updates
 
-## v1.0.2 (2017-10-04)
+## 2017-10-04
 
-* package.json clean-ups
-* add CHANGELOG.md
+- v1.0.2
+- package.json clean-ups
+- add CHANGELOG.md
 
-## v1.0.1 (2017-09-04)
+## 2017-09-04
 
-* initial version, copied from µOS++.
+- v1.0.1
+- initial version, copied from µOS++.
 
 
