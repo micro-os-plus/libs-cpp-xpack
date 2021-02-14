@@ -89,6 +89,7 @@ function(add_libraries_micro_os_plus_libs_cpp)
 
   # ---------------------------------------------------------------------------
 
+if(true)
   if(NOT TARGET micro-os-plus-libs-cpp-static)
 
     add_library(micro-os-plus-libs-cpp-static STATIC EXCLUDE_FROM_ALL)
@@ -108,6 +109,7 @@ function(add_libraries_micro_os_plus_libs_cpp)
     )
 
   endif()
+endif()
 
   # ---------------------------------------------------------------------------
 
