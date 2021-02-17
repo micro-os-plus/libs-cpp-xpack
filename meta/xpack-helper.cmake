@@ -64,31 +64,8 @@ function(add_libraries_micro_os_plus_libs_cpp)
 
   find_package(micro-os-plus-diag-trace)
 
-  # -----------------------------------------------------------------------------
-  
-    if(NOT TARGET micro-os-plus-libs-cpp-objects)
-
-    add_library(micro-os-plus-libs-cpp-objects OBJECT EXCLUDE_FROM_ALL)
-
-    target_sources_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-objects)
-    target_include_directories_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-objects)
-    target_compile_definitions_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-objects)
-
-    add_library(micro-os-plus::libs-cpp ALIAS micro-os-plus-libs-cpp-objects)
-    message(STATUS "micro-os-plus::libs-cpp")
-
-    target_link_libraries(
-      micro-os-plus-libs-cpp-objects
-
-      PUBLIC
-        micro-os-plus::diag-trace
-    )
-
-  endif()
-
   # ---------------------------------------------------------------------------
 
-if(true)
   if(NOT TARGET micro-os-plus-libs-cpp-static)
 
     add_library(micro-os-plus-libs-cpp-static STATIC EXCLUDE_FROM_ALL)
@@ -98,6 +75,7 @@ if(true)
     target_compile_definitions_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-static)
 
     add_library(micro-os-plus::libs-cpp-static ALIAS micro-os-plus-libs-cpp-static)
+    message(STATUS "micro-os-plus::libs-cpp-static")
 
     target_link_libraries(
       micro-os-plus-libs-cpp-static
@@ -107,7 +85,6 @@ if(true)
     )
 
   endif()
-endif()
 
   # ---------------------------------------------------------------------------
 
