@@ -81,7 +81,6 @@ function(add_libraries_micro_os_plus_libs_cpp)
       micro-os-plus-libs-cpp-objects
 
       PUBLIC
-        micro-os-plus::common
         micro-os-plus::diag-trace
     )
 
@@ -104,7 +103,6 @@ if(true)
       micro-os-plus-libs-cpp-static
       
       PUBLIC
-        micro-os-plus::common
         micro-os-plus::diag-trace-static
     )
 
