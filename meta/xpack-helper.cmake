@@ -19,46 +19,9 @@ message(STATUS "Including micro-os-plus-libs-cpp...")
 
 # -----------------------------------------------------------------------------
 
-function(target_sources_micro_os_plus_libs_cpp target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_sources(
-    ${target}
-
-    PRIVATE
-      ${xpack_current_folder}/src/cxx.cpp
-      ${xpack_current_folder}/src/system-error.cpp
-  )
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(target_include_directories_micro_os_plus_libs_cpp target)
-
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
-
-  target_include_directories(
-    ${target}
-
-    PUBLIC
-      ${xpack_current_folder}/include
-  )
-
-endfunction()
-
-# -----------------------------------------------------------------------------
-
-function(target_compile_definitions_micro_os_plus_libs_cpp target)
-
-  # None
-
-endfunction()
-
-# =============================================================================
-
 function(add_libraries_micro_os_plus_libs_cpp)
+
+  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   # ---------------------------------------------------------------------------
 
@@ -66,23 +29,39 @@ function(add_libraries_micro_os_plus_libs_cpp)
 
   # ---------------------------------------------------------------------------
 
-  if(NOT TARGET micro-os-plus-libs-cpp-static)
+  if(NOT TARGET micro-os-plus-libs-cpp-interface)
 
-    add_library(micro-os-plus-libs-cpp-static STATIC EXCLUDE_FROM_ALL)
+    add_library(micro-os-plus-libs-cpp-interface INTERFACE EXCLUDE_FROM_ALL)
 
-    target_sources_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-static)
-    target_include_directories_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-static)
-    target_compile_definitions_micro_os_plus_libs_cpp(micro-os-plus-libs-cpp-static)
+    # -------------------------------------------------------------------------
 
-    add_library(micro-os-plus::libs-cpp-static ALIAS micro-os-plus-libs-cpp-static)
-    message(STATUS "micro-os-plus::libs-cpp-static")
+    target_sources(
+      micro-os-plus-libs-cpp-interface
+  
+      INTERFACE
+        ${xpack_current_folder}/src/cxx.cpp
+        ${xpack_current_folder}/src/system-error.cpp
+    )
+
+    target_include_directories(
+      micro-os-plus-libs-cpp-interface
+  
+      INTERFACE
+        ${xpack_current_folder}/include
+    )
 
     target_link_libraries(
-      micro-os-plus-libs-cpp-static
+      micro-os-plus-libs-cpp-interface
       
-      PUBLIC
+      INTERFACE
         micro-os-plus::diag-trace-static
     )
+
+    # -------------------------------------------------------------------------
+    # Aliases
+
+    add_library(micro-os-plus::libs-cpp ALIAS micro-os-plus-libs-cpp-interface)
+    message(STATUS "micro-os-plus::libs-cpp")
 
   endif()
 
