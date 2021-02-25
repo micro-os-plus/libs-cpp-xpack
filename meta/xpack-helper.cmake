@@ -18,55 +18,51 @@ set(micro-os-plus-libs-cpp-included TRUE)
 message(STATUS "Including micro-os-plus-libs-cpp...")
 
 # -----------------------------------------------------------------------------
+# Dependencies.
 
-function(add_libraries_micro_os_plus_libs_cpp)
+find_package(micro-os-plus-diag-trace REQUIRED)
 
-  get_filename_component(xpack_current_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+# -----------------------------------------------------------------------------
+# The current folder.
 
-  # ---------------------------------------------------------------------------
+get_filename_component(xpack_current_folder ${CMAKE_CURRENT_LIST_DIR} DIRECTORY)
 
-  find_package(micro-os-plus-diag-trace)
+# -----------------------------------------------------------------------------
 
-  # ---------------------------------------------------------------------------
+if(NOT TARGET micro-os-plus-libs-cpp-interface)
 
-  if(NOT TARGET micro-os-plus-libs-cpp-interface)
-
-    add_library(micro-os-plus-libs-cpp-interface INTERFACE EXCLUDE_FROM_ALL)
-
-    # -------------------------------------------------------------------------
-
-    target_sources(
-      micro-os-plus-libs-cpp-interface
-  
-      INTERFACE
-        ${xpack_current_folder}/src/cxx.cpp
-        ${xpack_current_folder}/src/system-error.cpp
-    )
-
-    target_include_directories(
-      micro-os-plus-libs-cpp-interface
-  
-      INTERFACE
-        ${xpack_current_folder}/include
-    )
-
-    target_link_libraries(
-      micro-os-plus-libs-cpp-interface
-      
-      INTERFACE
-        micro-os-plus::diag-trace-static
-    )
-
-    # -------------------------------------------------------------------------
-    # Aliases
-
-    add_library(micro-os-plus::libs-cpp ALIAS micro-os-plus-libs-cpp-interface)
-    message(STATUS "micro-os-plus::libs-cpp")
-
-  endif()
+  add_library(micro-os-plus-libs-cpp-interface INTERFACE EXCLUDE_FROM_ALL)
 
   # ---------------------------------------------------------------------------
 
-endfunction()
+  target_sources(
+    micro-os-plus-libs-cpp-interface
+
+    INTERFACE
+      ${xpack_current_folder}/src/cxx.cpp
+      ${xpack_current_folder}/src/system-error.cpp
+  )
+
+  target_include_directories(
+    micro-os-plus-libs-cpp-interface
+
+    INTERFACE
+      ${xpack_current_folder}/include
+  )
+
+  target_link_libraries(
+    micro-os-plus-libs-cpp-interface
+    
+    INTERFACE
+      micro-os-plus::diag-trace-static
+  )
+
+  # ---------------------------------------------------------------------------
+  # Aliases.
+
+  add_library(micro-os-plus::libs-cpp ALIAS micro-os-plus-libs-cpp-interface)
+  message(STATUS "micro-os-plus::libs-cpp")
+
+endif()
 
 # -----------------------------------------------------------------------------
