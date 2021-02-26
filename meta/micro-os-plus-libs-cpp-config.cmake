@@ -38,12 +38,13 @@ if(NOT TARGET micro-os-plus-libs-cpp-interface)
 
   # ---------------------------------------------------------------------------
 
+  file(GLOB_RECURSE source_files CONFIGURE_DEPENDS "${xpack_current_folder}/src/*.c*")
+
   target_sources(
     micro-os-plus-libs-cpp-interface
 
     INTERFACE
-      ${xpack_current_folder}/src/cxx.cpp
-      ${xpack_current_folder}/src/system-error.cpp
+      ${source_files}
   )
 
   target_include_directories(
