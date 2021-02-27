@@ -92,7 +92,7 @@ namespace os
     const char*
     rtos_error_category::name () const noexcept
     {
-      return "cmsis";
+      return "rtos";
     }
 
 #pragma GCC diagnostic push
