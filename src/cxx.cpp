@@ -31,6 +31,10 @@
 
 // ----------------------------------------------------------------------------
 
+using namespace micro_os_plus;
+
+// ----------------------------------------------------------------------------
+
 #if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__)))
 
 // These functions are redefined locally, to avoid references to some
@@ -44,7 +48,7 @@ namespace __gnu_cxx
   void
   __verbose_terminate_handler ()
   {
-    os::trace::puts (__func__);
+    trace::puts (__func__);
     abort ();
     /* NOTREACHED */
   }
@@ -66,7 +70,7 @@ extern "C"
   __cxa_pure_virtual ()
   {
     // Attempt to use a virtual function before object has been constructed
-    os::trace::puts (__func__);
+    trace::puts (__func__);
     abort ();
     /* NOTREACHED */
   }
@@ -74,7 +78,7 @@ extern "C"
   void
   __cxa_deleted_virtual ()
   {
-    os::trace::puts (__func__);
+    trace::puts (__func__);
     abort ();
     /* NOTREACHED */
   }
