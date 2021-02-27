@@ -80,7 +80,7 @@ namespace os
 #endif
     }
 
-    struct cmsis_error_category : public std::error_category
+    struct rtos_error_category : public std::error_category
     {
       virtual const char*
       name () const noexcept;
@@ -90,7 +90,7 @@ namespace os
     };
 
     const char*
-    cmsis_error_category::name () const noexcept
+    rtos_error_category::name () const noexcept
     {
       return "cmsis";
     }
@@ -99,7 +99,7 @@ namespace os
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 
     std::string
-    cmsis_error_category::message (int i) const
+    rtos_error_category::message (int i) const
     {
 #if defined(DEBUG)
       return std::string (strerror (i));
@@ -125,10 +125,10 @@ namespace os
     }
 
     void
-    __throw_cmsis_error (int ev, const char* what_arg)
+    __throw_rtos_error (int ev, const char* what_arg)
     {
 #if defined(__EXCEPTIONS)
-      throw std::system_error (std::error_code (ev, cmsis_error_category ()),
+      throw std::system_error (std::error_code (ev, rtos_error_category ()),
                                what_arg);
 #else
       trace_printf ("system_error(%d, %s)\n", ev, what_arg);

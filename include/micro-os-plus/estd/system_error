@@ -51,7 +51,7 @@ namespace os
 
 #if 1
     [[noreturn]] void
-    __throw_cmsis_error (int ev, const char* what_arg);
+    __throw_rtos_error (int ev, const char* what_arg);
 #endif
     // ------------------------------------------------------------------------
 
