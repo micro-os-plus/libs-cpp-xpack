@@ -6,13 +6,18 @@ Please check
 [GitHub](https://github.com/micro-os-plus/libs-cpp-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2021-03-01
+
+- prepare v2.0.0
+
+## 2021-02-28
+
+- rename micro_os_plus
+
 ## 2021-02-04
 
 - v1.1.1-pre
 - [#1] - fix the missing strerror()
-
-## 2021-02-04
-
 - v1.1.0
 - first restructured release
 
@@ -37,5 +42,3 @@ and close existing issues and pull requests.
 
 - v1.0.1
 - initial version, copied from µOS++.
-
-
