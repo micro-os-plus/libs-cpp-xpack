@@ -18,7 +18,7 @@ endif()
 
 set(micro-os-plus-libs-cpp-included TRUE)
 
-message(STATUS "Including micro-os-plus-libs-cpp...")
+message(STATUS "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
 
 # -----------------------------------------------------------------------------
 # Dependencies.
