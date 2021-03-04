@@ -66,7 +66,7 @@ if(NOT TARGET micro-os-plus-libs-cpp-interface)
   # Aliases.
 
   add_library(micro-os-plus::libs-cpp ALIAS micro-os-plus-libs-cpp-interface)
-  message(STATUS "micro-os-plus::libs-cpp")
+  message(STATUS "=> micro-os-plus::libs-cpp")
 
 endif()
 
