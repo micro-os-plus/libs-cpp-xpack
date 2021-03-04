@@ -59,7 +59,7 @@ if(NOT TARGET micro-os-plus-libs-cpp-interface)
     micro-os-plus-libs-cpp-interface
     
     INTERFACE
-      micro-os-plus::diag-trace-static
+      micro-os-plus::diag-trace
   )
 
   # ---------------------------------------------------------------------------
