@@ -55,10 +55,10 @@ namespace micro_os_plus
     struct system_error_category : public std::error_category
     {
       virtual const char*
-      name () const noexcept;
+      name () const noexcept override;
 
       virtual std::string
-      message (int i) const;
+      message (int i) const override;
     };
 
     const char*
@@ -83,10 +83,10 @@ namespace micro_os_plus
     struct rtos_error_category : public std::error_category
     {
       virtual const char*
-      name () const noexcept;
+      name () const noexcept override;
 
       virtual std::string
-      message (int i) const;
+      message (int i) const override;
     };
 
     const char*
