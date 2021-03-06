@@ -34,9 +34,11 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(__ARM_EABI__)
-#include <system_error>
-#endif
+// note: replace the class-key with 'struct' (on RISC-V)
+// note: 'std::error_code' defined as 'struct' here
+// #if !defined(__ARM_EABI__)
+// #include <system_error>
+// #endif
 
 // ----------------------------------------------------------------------------
 
