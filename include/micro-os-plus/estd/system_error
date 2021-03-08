@@ -25,14 +25,14 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/*
- * The code is inspired by LLVM libcxx and GNU libstdc++-v3.
- */
-
 #ifndef MICRO_OS_PLUS_ESTD_SYSTEM_ERROR_
 #define MICRO_OS_PLUS_ESTD_SYSTEM_ERROR_
 
 // ----------------------------------------------------------------------------
+
+/*
+ * The code is inspired by LLVM libcxx and GNU libstdc++-v3.
+ */
 
 // note: replace the class-key with 'struct' (on RISC-V)
 // note: 'std::error_code' defined as 'struct' here
@@ -41,6 +41,12 @@
 // #endif
 
 // ----------------------------------------------------------------------------
+
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 
 namespace micro_os_plus
 {
@@ -59,6 +65,8 @@ namespace micro_os_plus
 
   } // namespace estd
 } // namespace micro_os_plus
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 

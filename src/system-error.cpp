@@ -44,6 +44,12 @@ using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
+
 namespace micro_os_plus
 {
   namespace estd
@@ -116,8 +122,16 @@ namespace micro_os_plus
     __throw_system_error (int ev, const char* what_arg)
     {
 #if defined(__EXCEPTIONS)
+
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat-bind-to-temporary-copy"
+#endif
       throw std::system_error (std::error_code (ev, system_error_category ()),
                                what_arg);
+#pragma GCC diagnostic pop
+
 #else
       trace_printf ("system_error(%d, %s)\n", ev, what_arg);
       std::abort ();
@@ -128,8 +142,16 @@ namespace micro_os_plus
     __throw_rtos_error (int ev, const char* what_arg)
     {
 #if defined(__EXCEPTIONS)
+
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat-bind-to-temporary-copy"
+#endif
       throw std::system_error (std::error_code (ev, rtos_error_category ()),
                                what_arg);
+
+#pragma GCC diagnostic pop
 #else
       trace_printf ("system_error(%d, %s)\n", ev, what_arg);
       std::abort ();
@@ -139,5 +161,7 @@ namespace micro_os_plus
     // ------------------------------------------------------------------------
   } // namespace estd
 } // namespace micro_os_plus
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------

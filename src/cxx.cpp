@@ -35,6 +35,12 @@ using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
+
 #if (!(defined(__APPLE__) || defined(__linux__) || defined(__unix__)))
 
 // These functions are redefined locally, to avoid references to some
@@ -86,6 +92,8 @@ extern "C"
 
 // ----------------------------------------------------------------------------
 
-void* __dso_handle __attribute__ ((weak));
+// void* __dso_handle __attribute__ ((weak));
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
