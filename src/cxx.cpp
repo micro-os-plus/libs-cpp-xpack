@@ -60,6 +60,13 @@ namespace __gnu_cxx
   }
 } // namespace __gnu_cxx
 
+#if defined(__EXCEPTIONS)
+
+// This variable is required when exceptions are enabled.
+void* __dso_handle __attribute__ ((weak));
+
+#endif // defined(__EXCEPTIONS)
+
 #endif // Unix
 
 // ----------------------------------------------------------------------------
@@ -91,8 +98,6 @@ extern "C"
 }
 
 // ----------------------------------------------------------------------------
-
-// void* __dso_handle __attribute__ ((weak));
 
 #pragma GCC diagnostic pop
 
