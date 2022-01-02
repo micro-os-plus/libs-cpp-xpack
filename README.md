@@ -37,22 +37,22 @@ Note: the package will be available from npmjs.com at a later date.
 
 For now, it can be installed from GitHub:
 
-```console
-$ cd <project>
-$ xpm init # Unless a package.json is already present
+```sh
+cd my-project
+xpm init # Unless a package.json is already present
 
-$ xpm install github:micro-os-plus/libs-cpp-xpack
+xpm install github:micro-os-plus/libs-cpp-xpack
 ```
 
 When ready, this package will be available as
 [`@micro-os-plus/libs-cpp`](https://www.npmjs.com/package/@micro-os-plus/libs-cpp)
 from the `npmjs.com` registry:
 
-```console
-$ cd <project>
-$ xpm init # Unless a package.json is already present
+```sh
+cd my-project
+xpm init # Unless a package.json is already present
 
-$ xpm install @micro-os-plus/libs-cpp@latest
+xpm install @micro-os-plus/libs-cpp@latest
 ```
 
 ### Git submodule
@@ -60,12 +60,12 @@ $ xpm install @micro-os-plus/libs-cpp@latest
 If, for any reason, **xpm** is not available, the next recommended
 solution is to link it as a Git submodule below an `xpacks` folder.
 
-```console
-$ cd <project>
-$ git init # Unless already a Git project
-$ mkdir -p xpacks
+```sh
+cd my-project
+git init # Unless already a Git project
+mkdir -p xpacks
 
-$ git submodule add https://github.com/micro-os-plus/libs-cpp-xpack.git \
+git submodule add https://github.com/micro-os-plus/libs-cpp-xpack.git \
   xpacks/micro-os-plus-libs-cpp
 ```
 
