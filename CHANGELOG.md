@@ -6,6 +6,10 @@ Please check
 [GitHub](https://github.com/micro-os-plus/libs-cpp-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-01-02
+
+- v2.0.3
+
 ## 2021-03-10
 
 - prepare v2.0.2
