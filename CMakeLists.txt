@@ -6,18 +6,18 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 # This file is intended to be consumed by applications with:
 #
 # `add_subdirectory("xpacks/micro-os-plus-libs-cpp")`
 #
-# The result is a library that can be added to the linker with:
+# The result is an interface library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC micro-os-plus::libs-cpp)`
-#
-# To avoid poluting this file with test related details, there is a separate
-# CMake configuration in the `tests` folder.
 
 # -----------------------------------------------------------------------------
 ## Preamble ##
@@ -48,6 +48,15 @@ add_library(micro-os-plus-libs-cpp-interface INTERFACE EXCLUDE_FROM_ALL)
 # -----------------------------------------------------------------------------
 # Target settings.
 
+target_include_directories(
+  micro-os-plus-libs-cpp-interface
+
+  INTERFACE
+    "include"
+)
+
+message(VERBOSE "+ -I include")
+
 target_sources(
   micro-os-plus-libs-cpp-interface
 
@@ -59,25 +68,32 @@ target_sources(
 message(VERBOSE "+ src/cxx.cpp")
 message(VERBOSE "+ src/system-error.cpp")
 
-target_include_directories(
+target_compile_definitions(
   micro-os-plus-libs-cpp-interface
 
   INTERFACE
-    "include"
+    # ... add preprocessor macro definitions.
 )
 
-message(VERBOSE "+ include")
+target_compile_options(
+  micro-os-plus-libs-cpp-interface
+
+  INTERFACE
+    # ... perhaps ignore some warnings.
+)
 
 target_link_libraries(
   micro-os-plus-libs-cpp-interface
 
   INTERFACE
+    # Dependencies
     micro-os-plus::diag-trace
 )
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::libs-cpp ALIAS micro-os-plus-libs-cpp-interface)
 message(VERBOSE "> micro-os-plus::libs-cpp -> micro-os-plus-libs-cpp-interface")
 
