@@ -55,8 +55,6 @@ target_include_directories(
     "include"
 )
 
-message(VERBOSE "+ -I include")
-
 target_sources(
   micro-os-plus-libs-cpp-interface
 
@@ -64,9 +62,6 @@ target_sources(
     "src/cxx.cpp"
     "src/system-error.cpp"
 )
-
-message(VERBOSE "+ src/cxx.cpp")
-message(VERBOSE "+ src/system-error.cpp")
 
 target_compile_definitions(
   micro-os-plus-libs-cpp-interface
@@ -89,6 +84,10 @@ target_link_libraries(
     # Dependencies
     micro-os-plus::diag-trace
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(micro-os-plus-libs-cpp-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
