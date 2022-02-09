@@ -64,7 +64,7 @@ namespace micro_os_plus
     std::string
     system_error_category::message (int i) const
     {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
       return std::string (strerror (i));
 #else
       return std::string ("");
@@ -92,7 +92,7 @@ namespace micro_os_plus
     std::string
     rtos_error_category::message (int i) const
     {
-#if defined(DEBUG)
+#if defined(MICRO_OS_PLUS_DEBUG)
       return std::string (strerror (i));
 #else
       return std::string ("");
