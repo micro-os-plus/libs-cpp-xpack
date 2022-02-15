@@ -6,6 +6,18 @@ Please check
 [GitHub](https://github.com/micro-os-plus/libs-cpp-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-15
+
+- v3.0.0
+
+## 2022-02-10
+
+- 61cccad .c* include <micro-os-plus/config.h>
+
+## 2022-02-09
+
+- fa9bac2 rename MICRO_OS_PLUS_DEBUG
+
 ## 2022-02-05
 
 - v2.2.1
