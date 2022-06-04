@@ -5,7 +5,7 @@
 
 These are some files that complement or extend the C++ library:
 
-- `cxx.cpp` add explicit handlers for C++ API functions, to be sure no othe heavy implementations are pulled from the (huge) standard library.
+- `cxx.cpp` add explicit handlers for C++ API functions, to be sure no other heavy implementations are pulled from the (huge) standard library.
 
 The project is hosted on GitHub as
 [micro-os-plus/libs-cpp-xpack](https://github.com/micro-os-plus/libs-cpp-xpack).
