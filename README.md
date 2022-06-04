@@ -104,7 +104,7 @@ To include this package in a project, consider the following details.
 
 - `include`
 
-TODO: list the available headeres
+TODO: list the available headers
 
 #### Preprocessor definitions
 
@@ -135,6 +135,17 @@ TBD
 
 TBD
 
+## Change log - incompatible changes
+
+According to [semver](https://semver.org) rules:
+
+> Major version X (X.y.z | X > 0) MUST be incremented if any
+backwards incompatible changes are introduced to the public API.
+
+The incompatible changes, in reverse chronological order,
+are:
+
+- TBD
 
 ## License
 
