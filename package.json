@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/libs-cpp",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A source library xPack with complementary C++ library functions",
   "main": "",
   "scripts": {
