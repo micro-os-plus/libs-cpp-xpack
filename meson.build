@@ -36,9 +36,12 @@ micro_os_plus_libs_cpp_dependency = declare_dependency(
     'src/cxx.cpp',
     'src/system-error.cpp',
   ),
+  compile_args: [
+    # None.
+  ],
   dependencies: [
     micro_os_plus_diag_trace_dependency,
-  ],
+  ]
 )
 
 message('+ -I include')
